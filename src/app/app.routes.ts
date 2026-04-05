@@ -5,6 +5,7 @@ import { Home } from './features/home/home';
 import { Ease } from './features/ease/ease';
 
 export const routes: Routes = [
+  { path: '', redirectTo: '', pathMatch: 'full' },
   { path: '', component: Ease },
   { path: 'home', component: Home },
   { path: 'login', component: Login },
