@@ -1,0 +1,107 @@
+<div class="page">
+
+  <!-- Header -->
+  <header class="hero">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <h1>Organise tes prochaines vacances sans stress</h1>
+      <p>Recherche simplifiée pour une prise en main évidente</p>
+    </div>
+    <div class="hero-wave">
+      <svg viewBox="0 0 1200 80" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M0 40 Q300 0 600 40 T1200 40 V80 H0 Z" fill="#f8f9fa"/>
+      </svg>
+    </div>
+  </header>
+
+  <!-- Search -->
+  <section class="search-card">
+    <h2>Rechercher un vol</h2>
+    <div class="search-grid">
+      <div class="input-group">
+        <span class="input-icon">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0d6efd" stroke-width="2">
+            <circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/>
+          </svg>
+        </span>
+        <input type="text" [(ngModel)]="depart" placeholder="Départ (ex: Yaoundé)" />
+      </div>
+      <div class="input-group">
+        <span class="input-icon">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#28a745" stroke-width="2">
+            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/>
+          </svg>
+        </span>
+        <input type="text" [(ngModel)]="destination" placeholder="Destination (ex: Paris)" />
+      </div>
+      <div class="input-group">
+        <span class="input-icon">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0d6efd" stroke-width="2">
+            <rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/>
+          </svg>
+        </span>
+        <input type="date" [(ngModel)]="dateAller" />
+      </div>
+      <div class="input-group">
+        <span class="input-icon">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#28a745" stroke-width="2">
+            <rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/>
+          </svg>
+        </span>
+        <input type="date" [(ngModel)]="dateRetour" />
+      </div>
+    </div>
+    <button class="btn-search" (click)="searchVol()">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5">
+        <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
+      </svg>
+      Rechercher
+    </button>
+  </section>
+
+  <!-- Contact -->
+  <section class="contact-card">
+    <div class="contact-icon">
+      <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#0d6efd" stroke-width="1.5">
+        <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.4 2 2 0 0 1 3.6 1.22h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.82a16 16 0 0 0 6.29 6.29l.96-.96a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/>
+      </svg>
+    </div>
+    <h3>Service client</h3>
+    <p class="contact-phone">+237 652 94 70 60</p>
+    <a href="mailto:contact@ease.travel" class="contact-email">contact&#64;ease.travel</a>
+  </section>
+
+  <!-- Partners slider -->
+  <section class="slider-card">
+    <h3>Ils nous font confiance</h3>
+    <div class="slider-wrapper">
+      <button class="slider-nav prev" (click)="changeSlide(-1)">&#10094;</button>
+      <div class="slider-track">
+        <div class="slider-inner" [style.transform]="sliderTransform">
+          @for (partner of partners; track partner) {
+            <div class="partner-chip">{{ partner }}</div>
+          }
+        </div>
+      </div>
+      <button class="slider-nav next" (click)="changeSlide(1)">&#10095;</button>
+    </div>
+  </section>
+
+  <!-- Newsletter -->
+  <section class="newsletter">
+    <div class="newsletter-content">
+      <h3>Ne ratez aucun de nos bons plans</h3>
+      <p>Inscrivez-vous à notre newsletter et recevez nos meilleures offres de vols !</p>
+      <form class="newsletter-form" (submit)="subscribe($event)">
+        <input type="email" [(ngModel)]="email" name="email" placeholder="Votre email" required />
+        <button type="submit">M'inscrire</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>© 2026 Ease Travel · Tous droits réservés</p>
+  </footer>
+
+</div>

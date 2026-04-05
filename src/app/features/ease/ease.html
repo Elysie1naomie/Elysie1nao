@@ -1,0 +1,394 @@
+<div class="ease-page">
+
+  <!-- ── NAVBAR ── -->
+  <nav class="navbar">
+    <div class="nav-inner">
+      <span class="brand">EASE</span>
+      <div class="nav-links">
+        <a href="#">Nos services <span class="arrow">▾</span></a>
+        <a href="#">Tourisme</a>
+        <a href="#">Billets d'avions</a>
+        <a href="#">Hotels</a>
+      </div>
+      <div class="nav-right">
+        <span class="lang">Français</span>
+        <span class="currency">FCFA <span class="arrow">▾</span></span>
+        <button class="btn-connect">Connectez-vous</button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ── HERO ── -->
+  <section class="hero">
+    <h1>Rechercher des <span class="highlight">billets d'avion</span> pas chers et des bons plans voyages</h1>
+
+    <!-- Search box -->
+    <div class="search-box">
+      <!-- Tabs -->
+      <div class="tabs">
+        @for (tab of tabs; track tab.id) {
+          <button class="tab-btn" [class.active]="activeTab === tab.id" (click)="activeTab = tab.id">
+            <span class="tab-icon">{{ tab.icon }}</span>
+            <span>{{ tab.label }}</span>
+          </button>
+        }
+      </div>
+
+      <!-- Form -->
+      <div class="search-form">
+        <div class="trip-type">
+          <label><input type="radio" name="trip" value="aller-retour" [(ngModel)]="tripType" /> Aller-Retour</label>
+          <label><input type="radio" name="trip" value="aller-simple" [(ngModel)]="tripType" /> Aller simple</label>
+          <div class="flexible-toggle">
+            <span>Mes dates de voyage sont flexibles</span>
+            <label class="toggle">
+              <input type="checkbox" [(ngModel)]="flexible" />
+              <span class="slider-toggle"></span>
+            </label>
+          </div>
+        </div>
+
+        <div class="form-fields">
+          <div class="field-group">
+            <span class="field-icon">📍</span>
+            <div>
+              <div class="field-label">D'où partez-vous ?</div>
+              <input type="text" [(ngModel)]="depart" placeholder="Ville de départ" class="field-input" />
+            </div>
+          </div>
+          <div class="field-divider"></div>
+          <div class="field-group">
+            <span class="field-icon">📍</span>
+            <div>
+              <div class="field-label">Où allez-vous ?</div>
+              <input type="text" [(ngModel)]="destination" placeholder="Ville de destination" class="field-input" />
+            </div>
+          </div>
+          <div class="field-divider"></div>
+          <div class="field-group">
+            <span class="field-icon">📅</span>
+            <div>
+              <div class="field-label">Départ</div>
+              <div class="field-value">{{ dateDepart }}</div>
+            </div>
+          </div>
+          <div class="field-divider"></div>
+          <div class="field-group">
+            <span class="field-icon">📅</span>
+            <div>
+              <div class="field-label">Retour</div>
+              <div class="field-value">{{ dateRetour }}</div>
+            </div>
+          </div>
+          <div class="field-divider"></div>
+          <div class="field-group">
+            <span class="field-icon">👤</span>
+            <div>
+              <div class="field-label">Voyageur(s)</div>
+              <div class="field-value">1 Adulte, Eco...</div>
+            </div>
+          </div>
+          <button class="btn-search">Recherchez</button>
+        </div>
+
+        <div class="filters-row">
+          <span class="filter-icon">⚙</span>
+          <span class="filter-label">Filtres Additionnels</span>
+          <span class="filter-chip">Compagnies aériennes <span>⊕</span></span>
+          <span class="filter-chip">Nombre d'escales (max) <span>⊕</span></span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── FEATURES ── -->
+  <section class="features">
+    <div class="feature-card">
+      <div class="feature-icon-wrap">
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#1a237e" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+      </div>
+      <div>
+        <div class="feature-title">Recherche</div>
+        <div class="feature-sub">Simplifiée pour une prise en main évidente</div>
+      </div>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon-wrap">
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#1a237e" stroke-width="2"><rect x="2" y="5" width="20" height="14" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/></svg>
+      </div>
+      <div>
+        <div class="feature-title">Moyens de paiement</div>
+        <div class="payment-logos">
+          <span class="pay-badge orange">Orange Money</span>
+          <span class="pay-badge momo">MoMo</span>
+          <span class="pay-badge visa">VISA</span>
+          <span class="pay-badge mc">MC</span>
+        </div>
+      </div>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon-wrap">
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#1a237e" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.4 2 2 0 0 1 3.6 1.22h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.82a16 16 0 0 0 6.29 6.29l.96-.96a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+      </div>
+      <div>
+        <div class="feature-title">Service client</div>
+        <div class="feature-sub">+237 652 94 70 60</div>
+        <div class="feature-sub">contact&#64;ease.travel</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── SÉJOURS ── -->
+  <section class="listing-section">
+    <div class="listing-header">
+      <div>
+        <h2>Nos Séjours Touristiques pour 2026</h2>
+        <p>Visitez le monde avec ces séjours vers des destinations paradisiaques</p>
+      </div>
+      <div class="nav-arrows">
+        <button class="arrow-btn">‹</button>
+        <button class="arrow-btn dark">›</button>
+      </div>
+    </div>
+    <div class="cards-grid">
+      @for (s of sejours; track s.city) {
+        <div class="dest-card" [style.backgroundImage]="'url(' + s.img + ')'">
+          <div class="dest-overlay">
+            <div class="dest-badge">{{ s.region }} · {{ s.city }}</div>
+            <div class="dest-price">{{ s.days }} jour(s) à partir de : <strong>{{ s.price }} / Pers.</strong></div>
+          </div>
+        </div>
+      }
+    </div>
+    <div class="see-all-row">
+      <button class="btn-see-all">Voir tous les séjours touristiques</button>
+    </div>
+  </section>
+
+  <!-- ── HÔTELS ── -->
+  <section class="listing-section">
+    <div class="listing-header">
+      <div>
+        <h2>Hôtels à Yaoundé, Douala et Abidjan. Meilleurs Tarifs</h2>
+        <p>Comparez et réservez les meilleurs hôtels à Yaoundé, Douala et Abidjan. Photos réelles, réservation instantanée.</p>
+      </div>
+      <div class="nav-arrows">
+        <button class="arrow-btn">‹</button>
+        <button class="arrow-btn dark">›</button>
+      </div>
+    </div>
+    <div class="cards-grid">
+      @for (h of hotels; track h.name) {
+        <div class="hotel-card">
+          <div class="hotel-img" [style.backgroundImage]="'url(' + h.img + ')'">
+            <button class="wishlist-btn">♡</button>
+          </div>
+          <div class="hotel-info">
+            <div class="hotel-name">{{ h.name }}</div>
+            <div class="hotel-stars">
+              @for (s of stars(h.stars); track $index) {<span class="star">★</span>}
+              <span class="hotel-city">• {{ h.city }}</span>
+            </div>
+            <div class="hotel-price">{{ h.price }} <span>/Nuit</span></div>
+          </div>
+        </div>
+      }
+    </div>
+    <div class="see-all-row">
+      <button class="btn-see-all">Voir tous les hôtels</button>
+    </div>
+  </section>
+
+  <!-- ── APPARTEMENTS ── -->
+  <section class="listing-section">
+    <div class="listing-header">
+      <div>
+        <h2>Appartements Meublés à Yaoundé et Douala – Location Courte &amp; Longue Durée</h2>
+        <p>Studios et appartements meublés au Cameroun. Idéaux pour séjours d'affaires, vacances ou expatriés. Réservez en ligne.</p>
+      </div>
+      <div class="nav-arrows">
+        <button class="arrow-btn">‹</button>
+        <button class="arrow-btn dark">›</button>
+      </div>
+    </div>
+    <div class="cards-grid">
+      @for (a of apartments; track a.title) {
+        <div class="dest-card" [style.backgroundImage]="'url(' + a.img + ')'">
+          <div class="dest-overlay">
+            <div class="dest-badge">{{ a.city }} · {{ a.title }}</div>
+            <div class="apt-desc">{{ a.desc }}</div>
+            <div class="apt-price">2 jour(s) à partir de : <strong>{{ a.price }}</strong></div>
+          </div>
+        </div>
+      }
+    </div>
+    <div class="see-all-row">
+      <button class="btn-see-all">Voir tous les appartements</button>
+    </div>
+  </section>
+
+  <!-- ── VOITURES ── -->
+  <section class="listing-section">
+    <div class="listing-header">
+      <div>
+        <h2>Location de Voitures au Cameroun. Avec ou Sans Chauffeur</h2>
+        <p>Louez une voiture à Yaoundé, Douala et partout au Cameroun. Large choix de véhicules, tarifs compétitifs, réservation simple.</p>
+      </div>
+      <div class="nav-arrows">
+        <button class="arrow-btn">‹</button>
+        <button class="arrow-btn dark">›</button>
+      </div>
+    </div>
+    <div class="cards-grid">
+      @for (v of voitures; track v.name) {
+        <div class="hotel-card">
+          <div class="hotel-img" [style.backgroundImage]="'url(' + v.img + ')'">
+            <button class="wishlist-btn">♡</button>
+          </div>
+          <div class="hotel-info">
+            <div class="hotel-name">{{ v.name }}</div>
+            <div class="hotel-stars"><span class="hotel-city">{{ v.type }} | {{ v.city }}</span></div>
+            <div class="hotel-price">{{ v.price }} <span>/Jour</span></div>
+          </div>
+        </div>
+      }
+    </div>
+    <div class="see-all-row">
+      <button class="btn-see-all">Voir toutes les locations de voiture</button>
+    </div>
+  </section>
+
+  <!-- ── PARTENAIRES ── -->
+  <section class="partners-section">
+    <h3>Ils nous font confiance</h3>
+    <div class="partners-row">
+      @for (p of partners; track p.name) {
+        <div class="partner-logo">
+          <img [src]="p.img" [alt]="p.name" />
+        </div>
+      }
+    </div>
+  </section>
+
+  <!-- ── NEWSLETTER ── -->
+  <section class="newsletter-section">
+    <div class="newsletter-inner">
+      <div class="newsletter-text">
+        <h3>Ne ratez aucun de nos bons plans</h3>
+        <p>Inscrivez-vous à notre newsletter et Recevez nos meilleures offres de vols, obtenez les meilleurs prix pour les destinations les plus populaires !</p>
+        <form class="newsletter-form" (submit)="subscribe($event)">
+          <input type="email" [(ngModel)]="email" name="email" placeholder="Adresse Email" required />
+          <button type="submit">M'inscrire</button>
+        </form>
+      </div>
+      <div class="newsletter-illustration">
+        <div class="sky">
+          <div class="sun"></div>
+          <div class="cloud cloud-1"></div>
+          <div class="cloud cloud-2"></div>
+          <div class="plane">✈</div>
+          <div class="dashed-path"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── FOOTER ── -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-col">
+        <h4>Plus sur Ease</h4>
+        <a href="#">Ease Travel</a>
+        <a href="#">A propos de nous</a>
+        <a href="#">Blog</a>
+        <a href="#">Recrutement à EASE</a>
+        <a href="#">Vacances all-inclusive à Dubaï</a>
+        <a href="#">Billets d'avion Cameroon Canada</a>
+        <a href="#">Vol Douala Yaoundé</a>
+        <a href="#">Vol Dakar Abidjan</a>
+        <a href="#">Vol Yaounde Garoua</a>
+        <a href="#">Vol Douala Paris Pas Cher</a>
+        <a href="#">Vol Douala Abidjan</a>
+        <a href="#">Vol Abidjan Paris</a>
+        <a href="#">Vol Abidjan Conakry</a>
+        <a href="#">Vol Abidjan Casablanca</a>
+        <a href="#">Vol Abidjan San Pedro</a>
+        <a href="#">Vol Dakar Paris</a>
+        <a href="#">Conditions de confidentialité</a>
+        <a href="#">Conditions générales d'utilisation</a>
+      </div>
+      <div class="footer-col">
+        <h4>Nos services</h4>
+        <a href="#">Billets d'avion</a>
+        <a href="#">Séjour touristique</a>
+        <a href="#">Tourist attractions</a>
+        <a href="#">Appartement meublé</a>
+        <a href="#">Réservation d'hôtels</a>
+        <a href="#">Service de visa</a>
+        <a href="#">Tontine Vacances</a>
+        <a href="#">Meublés à Douala</a>
+        <a href="#">Meublés à Kribi</a>
+        <a href="#">Meublés à Yaoundé</a>
+      </div>
+      <div class="footer-col">
+        <h4>Contactez-nous</h4>
+        <div class="contact-block">
+          <strong>Cameroun</strong>
+          <span>DOUALA/YAOUNDÉ</span>
+          <span>RC/DLA/2020/M/4960, BP3224 Douala-Cameroun</span>
+          <a href="mailto:contact@ease-ts.com">contact&#64;ease-ts.com</a>
+          <span>(+237) 652 94 70 60</span>
+        </div>
+        <div class="contact-block">
+          <strong>Côte d'Ivoire</strong>
+          <span>ABIDJAN</span>
+          <span>EASE SARL U RC/ABIDJAN CI-ABJ-03-2022-B13-00785, BP4799</span>
+          <a href="mailto:contact@ease.ci">contact&#64;ease.ci</a>
+          <span>(+225) 07 98 52 78 25</span>
+        </div>
+        <div class="contact-block">
+          <strong>États-Unis d'Amérique</strong>
+          <span>EASE TRAVEL INC. 16192 COASTAL HIGHWAY, LEWES, DE 19958</span>
+          <a href="mailto:contact@ease.travel">contact&#64;ease.travel</a>
+          <span>+1 (205) 608-5442</span>
+        </div>
+        <div class="contact-block">
+          <strong>Belgique</strong>
+          <span>EASE TRAVEL EU.</span>
+          <a href="mailto:contact@ease.travel">contact&#64;ease.travel</a>
+          <span>+33 744 23 13 44</span>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Paiement</h4>
+        <div class="pay-grid">
+          <span class="pay-badge orange">Orange Money</span>
+          <span class="pay-badge momo">MoMo</span>
+          <span class="pay-badge visa">VISA</span>
+          <span class="pay-badge mc">Mastercard</span>
+          <span class="pay-badge amex">Amex</span>
+          <span class="pay-badge revolut">Revolut</span>
+          <span class="pay-badge beObank">beObank</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <span class="brand-footer">EASE</span>
+      <div class="store-badges">
+        <span class="store-badge">▶ Google Play</span>
+        <span class="store-badge">🍎 App Store</span>
+      </div>
+      <div class="social-links">
+        <a href="#">f</a>
+        <a href="#">𝕏</a>
+        <a href="#">in</a>
+      </div>
+      <span class="copyright">Copyright 2026 © Ease Travel Inc. Tous les droits sont réservés.</span>
+    </div>
+  </footer>
+
+  <!-- Scroll to top -->
+  <button class="scroll-top" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+
+</div>
