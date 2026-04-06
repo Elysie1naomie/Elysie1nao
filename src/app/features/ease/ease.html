@@ -15,6 +15,20 @@
         <span class="currency">FCFA <span class="arrow">▾</span></span>
         <button class="btn-connect">Connectez-vous</button>
       </div>
+      <button class="hamburger" (click)="menuOpen = !menuOpen" [attr.aria-expanded]="menuOpen" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <!-- Mobile menu -->
+    <div class="mobile-menu" [class.open]="menuOpen" (click)="menuOpen = false">
+      <a href="#">Nos services</a>
+      <a href="#">Tourisme</a>
+      <a href="#">Billets d'avions</a>
+      <a href="#">Hotels</a>
+      <div class="mobile-menu-footer">
+        <span class="currency">FCFA ▾</span>
+        <button class="btn-connect">Connectez-vous</button>
+      </div>
     </div>
   </nav>
 
@@ -299,64 +313,36 @@
       <div class="footer-col">
         <h4>Plus sur Ease</h4>
         <a href="#">Ease Travel</a>
-        <a href="#">A propos de nous</a>
+        <a href="#">À propos de nous</a>
         <a href="#">Blog</a>
-        <a href="#">Recrutement à EASE</a>
-        <a href="#">Vacances all-inclusive à Dubaï</a>
-        <a href="#">Billets d'avion Cameroon Canada</a>
-        <a href="#">Vol Douala Yaoundé</a>
-        <a href="#">Vol Dakar Abidjan</a>
-        <a href="#">Vol Yaounde Garoua</a>
-        <a href="#">Vol Douala Paris Pas Cher</a>
-        <a href="#">Vol Douala Abidjan</a>
-        <a href="#">Vol Abidjan Paris</a>
-        <a href="#">Vol Abidjan Conakry</a>
-        <a href="#">Vol Abidjan Casablanca</a>
-        <a href="#">Vol Abidjan San Pedro</a>
-        <a href="#">Vol Dakar Paris</a>
+        <a href="#">Recrutement</a>
         <a href="#">Conditions de confidentialité</a>
-        <a href="#">Conditions générales d'utilisation</a>
+        <a href="#">CGU</a>
       </div>
       <div class="footer-col">
         <h4>Nos services</h4>
         <a href="#">Billets d'avion</a>
         <a href="#">Séjour touristique</a>
-        <a href="#">Tourist attractions</a>
         <a href="#">Appartement meublé</a>
         <a href="#">Réservation d'hôtels</a>
         <a href="#">Service de visa</a>
-        <a href="#">Tontine Vacances</a>
-        <a href="#">Meublés à Douala</a>
-        <a href="#">Meublés à Kribi</a>
-        <a href="#">Meublés à Yaoundé</a>
+        <a href="#">Location de voitures</a>
       </div>
       <div class="footer-col">
         <h4>Contactez-nous</h4>
         <div class="contact-block">
           <strong>Cameroun</strong>
-          <span>DOUALA/YAOUNDÉ</span>
-          <span>RC/DLA/2020/M/4960, BP3224 Douala-Cameroun</span>
           <a href="mailto:contact@ease-ts.com">contact&#64;ease-ts.com</a>
           <span>(+237) 652 94 70 60</span>
         </div>
         <div class="contact-block">
           <strong>Côte d'Ivoire</strong>
-          <span>ABIDJAN</span>
-          <span>EASE SARL U RC/ABIDJAN CI-ABJ-03-2022-B13-00785, BP4799</span>
           <a href="mailto:contact@ease.ci">contact&#64;ease.ci</a>
           <span>(+225) 07 98 52 78 25</span>
         </div>
         <div class="contact-block">
-          <strong>États-Unis d'Amérique</strong>
-          <span>EASE TRAVEL INC. 16192 COASTAL HIGHWAY, LEWES, DE 19958</span>
+          <strong>International</strong>
           <a href="mailto:contact@ease.travel">contact&#64;ease.travel</a>
-          <span>+1 (205) 608-5442</span>
-        </div>
-        <div class="contact-block">
-          <strong>Belgique</strong>
-          <span>EASE TRAVEL EU.</span>
-          <a href="mailto:contact@ease.travel">contact&#64;ease.travel</a>
-          <span>+33 744 23 13 44</span>
         </div>
       </div>
       <div class="footer-col">
@@ -366,9 +352,7 @@
           <span class="pay-badge momo">MoMo</span>
           <span class="pay-badge visa">VISA</span>
           <span class="pay-badge mc">Mastercard</span>
-          <span class="pay-badge amex">Amex</span>
           <span class="pay-badge revolut">Revolut</span>
-          <span class="pay-badge beObank">beObank</span>
         </div>
       </div>
     </div>
@@ -384,7 +368,7 @@
         <a href="#">𝕏</a>
         <a href="#">in</a>
       </div>
-      <span class="copyright">Copyright 2026 © Ease Travel Inc. Tous les droits sont réservés.</span>
+      <span class="copyright">Copyright 2026 © Ease Travel Inc. Tous droits réservés.</span>
     </div>
   </footer>
 

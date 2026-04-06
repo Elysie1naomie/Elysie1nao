@@ -9,6 +9,7 @@ import { CommonModule } from '@angular/common';
   styleUrl: './ease.css',
 })
 export class Ease implements OnInit, OnDestroy {
+  menuOpen = false;
   tripType: 'aller-retour' | 'aller-simple' = 'aller-retour';
   depart = '';
   destination = '';
